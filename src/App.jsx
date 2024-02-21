@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import logoImg from './assets/crypto-logo.png'
+import Navbar from './components/Navbar'
+
+import { Routes, Route } from 'react-router-dom'
 
 import Coins from './components/Coins'
+import Coin from './routes/Coin'
 
 function App() {
 	const [coins, setCoins] = useState([])
 
 	const url =
-		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en'
+		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=30&page=1&sparkline=false&locale=en'
 
 	useEffect(() => {
 		axios
@@ -23,13 +26,21 @@ function App() {
 	}, [])
 
 	return (
-		<div className='bg-[#050810] h-[100vh]'>
-			<nav className='w-full flex items-center justify-center'>
-				<img src={logoImg} alt='logo' className='w-[300px]' />
-			</nav>
-			<section className='py-6'>
-				<Coins coins={coins} />
-			</section>
+		<div className='bg-[#050810] min-h-[100vh]'>
+			<Navbar />
+			<Routes>
+				<Route
+					path='/'
+					element={
+						<section className='py-6'>
+							<Coins coins={coins} />
+						</section>
+					}
+				/>
+				<Route path='/coin' element={<Coin />}>
+					<Route path=':coinId' element={<Coin />} />
+				</Route>
+			</Routes>
 		</div>
 	)
 }
