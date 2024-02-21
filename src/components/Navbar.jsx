@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 	return (
-		<Link>
-			<nav className='w-full flex items-center justify-center'>
+		<nav className='w-full flex items-center justify-center'>
+			<Link to='/'>
 				<img src={logoImg} alt='logo' className='w-[300px]' />
-			</nav>
-		</Link>
+			</Link>
+		</nav>
 	)
 }
 

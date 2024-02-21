@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Navbar from './components/Navbar'
-
 import { Routes, Route } from 'react-router-dom'
-
 import Coins from './components/Coins'
 import Coin from './routes/Coin'
+import Navbar from './components/Navbar'
 
 function App() {
 	const [coins, setCoins] = useState([])
