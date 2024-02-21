@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import logoImg from './assets/crypto-logo.png'
 
 import Coins from './components/Coins'
 
@@ -22,9 +23,14 @@ function App() {
 	}, [])
 
 	return (
-		<>
-			<Coins coins={coins} />
-		</>
+		<div className='bg-[#050810] h-[100vh]'>
+			<nav className='w-full flex items-center justify-center'>
+				<img src={logoImg} alt='logo' className='w-[300px]' />
+			</nav>
+			<section className='py-6'>
+				<Coins coins={coins} />
+			</section>
+		</div>
 	)
 }
 
