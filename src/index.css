@@ -9,4 +9,10 @@
 		max-width: 1140px;
 		margin: 0 auto;
 	}
+	.custom-box-shadow {
+		box-shadow: 0px 0px 20px 20px #1a2953;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
 }
