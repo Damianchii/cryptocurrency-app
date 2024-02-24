@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
+//nie bedzie widac znacznikow w description, tylko linki
+import DOMPurify from 'dompurify'
 
 function Coin() {
 	const params = useParams()
@@ -48,16 +50,30 @@ function Coin() {
 						</span>
 					</div>
 				</div>
+				<div className='grid'>
+					{coin.market_data?.price_change_percentage_1h_in_currency ? (
+						<p
+							className={`${
+								coin.market_data.price_change_percentage_1h_in_currency.usd < 0 ? 'text-red-500' : 'text-green-500'
+							}`}>
+							{coin.market_data.price_change_percentage_1h_in_currency.usd.toFixed(2)}%
+						</p>
+					) : null}
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
 				<div className='py-6 bg-[#1a2953] mt-10 px-4'>
 					<h3 className='text-3xl px-2 py-4'>About {coin.name && coin.name}</h3>
-					<p className='text-xl max-h-[60px] hover:max-h-[250px] duration-300 overflow-hidden relative '>
-						{coin.description && coin.description.en}
-						<span className='custom-box-shadow w-full'></span>
-					</p>
-
-					{/* <button className='absolute left-[50%] bottom-0 translate-x-[-50%] translate-y-[50%] px-4 py-2 bg-red-500'>
-						Read more
-					</button> */}
+					<p
+						className={`text-xl duration-300 overflow-hidden relative `}
+						dangerouslySetInnerHTML={{
+							__html: DOMPurify.sanitize(coin.description ? coin.description.en : ''),
+						}}></p>
 				</div>
 			</div>
 		</div>
