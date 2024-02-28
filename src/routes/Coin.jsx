@@ -142,7 +142,7 @@ function Coin() {
 						</span>
 					</div>
 				</div>
-				<div className='flex w-[200px] items-center justify-between  text-xl'>
+				<div className='flex gap-6 min-w-[200px] items-center justify-between  text-xl'>
 					<div className='p-4 flex flex-col items-center border-2 border-purple-500 rounded-2xl gap-2'>
 						{' '}
 						<h1 className='p-2 relative after:block after:content[""] after:w-[80%] after: after:h-[1px] after:translate-x-[10%] after:bg-white  after:absolute after:bottom-[-1px]  after:left-0'>
