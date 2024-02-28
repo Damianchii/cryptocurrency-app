@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
-//nie bedzie widac znacznikow w description, tylko linki
+//nie bedzie widac znacznikow w description, tylko linki | usefull
 import DOMPurify from 'dompurify'
 
 function Coin() {
