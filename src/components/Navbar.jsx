@@ -6,7 +6,7 @@ const Navbar = () => {
 	return (
 		<nav className='w-full flex items-center justify-center'>
 			<Link to='/'>
-				<img src={logoImg} alt='logo' className='w-[300px]' />
+				<img src={logoImg} alt='logo' className='lg:w-[300px] w-[200px]' />
 			</Link>
 		</nav>
 	)

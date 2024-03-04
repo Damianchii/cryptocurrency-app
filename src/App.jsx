@@ -24,7 +24,7 @@ function App() {
 	}, [])
 
 	return (
-		<div className='bg-[#050810] min-h-[100vh]'>
+		<div className='bg-[#050810] min-h-[100vh] p-4'>
 			<Navbar />
 			<Routes>
 				<Route

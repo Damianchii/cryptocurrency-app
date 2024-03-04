@@ -6,11 +6,11 @@ const Coins = (props) => {
 	return (
 		<div className='flex justify-center items-center font-main '>
 			<div className='flex flex-col gap-2 max-container w-full p-4 rounded-2xl border-[0.2px] border-[#333] shadow-xl bg-[#090C14]'>
-				<div className='flex justify-between font-[400] text-slate-500 items-center px-6 py-4 '>
+				<div className='flex justify-between font-[400] text-slate-500 items-center lg:px-6 px-2 lg;py-4 py-2 '>
 					<p className='basis-1/2 lg:flex-1 '>Coin name</p>
 					<p className='basis-1/4  lg:flex-1'>Last price</p>
 					<p className='basis-1/4 lg:flex-1'>24h Change</p>
-					<p className='basis-1/4  lg:flex-1'>Market cap</p>
+					<p className='basis-1/4 max-lg:hidden lg:flex-1'>Market cap</p>
 				</div>
 				{props.coins.map((coins) => {
 					return (

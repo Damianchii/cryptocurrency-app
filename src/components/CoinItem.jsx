@@ -3,7 +3,7 @@ import { IoMdTrendingDown, IoMdTrendingUp } from 'react-icons/io'
 
 const CoinItem = (props) => {
 	return (
-		<div className='flex w-full px-6 p-2 justify-center items-center text-white hover:bg-[#0e1320] cursor-pointer'>
+		<div className='flex w-full lg:px-6 px-2 p-2 justify-center items-center text-white hover:bg-[#0e1320] cursor-pointer'>
 			<div className=' flex items-center gap-3 basis-1/2 lg:flex-1 '>
 				<div className=''>
 					<img src={props.coins.image} alt='crypto-coin' className='w-[30px]' />
@@ -24,7 +24,7 @@ const CoinItem = (props) => {
 					{props.coins.price_change_percentage_24h.toFixed(2)}%
 				</p>
 			</div>
-			<div className='basis-1/4  lg:flex-1'>${props.coins.market_cap.toLocaleString()}</div>
+			<div className='basis-1/4 max-lg:hidden lg:flex-1'>${props.coins.market_cap.toLocaleString()}</div>
 		</div>
 	)
 }
